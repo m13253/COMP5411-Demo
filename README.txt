@@ -43,6 +43,10 @@ or PlayStation controller.)
          D             Strife right
        Shift           Descend vertically
        Space           Ascend vertically
+         Up            Pitch up
+        Down           Pitch down
+        Left           Yaw left
+       Right           Yaw right
 Left click and drag    Change the direction of view
 
 3.2 Using an Xbox controller:
