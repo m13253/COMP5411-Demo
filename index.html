@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en-us">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Shibuya City</title>
+    <style type="text/css">
+        html {
+            height: 100%;
+            margin: 0px;
+        }
+
+        body {
+            -moz-user-select: none;
+            -ms-user-select: none;
+            -webkit-user-select: none;
+            background-color: #afb9be;
+            height: 100%;
+            margin: 0px;
+            overflow: hidden;
+            user-select: none;
+        }
+
+        #loading-container {
+            align-items: center;
+            display: flex;
+            height: 100%;
+            justify-content: center;
+            position: fixed;
+            width: 100%;
+        }
+
+        #loading {
+            background-color: rgba(0, 0, 0, 0.533);
+            border-radius: 14pt;
+            color: #ffffff;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 14pt;
+            padding: 14pt;
+        }
+
+        .copyright {
+            align-items: flex-end;
+            bottom: 0px;
+            display: flex;
+            flex-flow: column;
+            position: fixed;
+            right: 0px;
+        }
+
+        .copyright p {
+            background-color: rgba(0, 0, 0, 0.533);
+            color: #ffffff;
+            font-family: "Helvetica Neue", Arial, sans-serif;
+            font-size: 7.5pt;
+            line-height: 12pt;
+            margin: 0px;
+            padding: 0px 4.5pt;
+            text-align: right;
+        }
+
+        canvas#stage {
+            height: 100%;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="loading-container">
+        <div id="loading">0% Loaded&#8230;</div>
+    </div>
+    <div class="copyright">
+        <p>Copyright &copy; 2020 Yuchen Ma, Xiaozhe Ren, all rights reserved.</p>
+        <p>Map data &copy; 2014 PASCO CORPORATION &amp; 3D City Experience Lab.</p>
+    </div>
+    <canvas id="stage"></canvas>
+
+    <script src="js/registerResource.js" language="javascript"></script>
+    <script src="js/scripts.js" language="javascript" async="async"></script>
+    <script src="third-party/draco_decoder.blob.js" language="javascript" async="async"></script>
+    <script src="third-party/draco_decoder.wasm.blob.js" language="javascript" async="async"></script>
+    <script src="third-party/draco_wasm_wrapper.blob.js" language="javascript" async="async"></script>
+
+    <script src="gltf/Tile_173078_LD_011_018_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_018_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_017_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_019_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_018_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_017_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_019_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_017_L15.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_019_L15.glb.blob.js" language="javascript" async="async"></script>
+
+    <script src="gltf/Tile_173078_LD_011_018_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_018_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_017_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_019_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_018_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_017_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_019_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_017_L18.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_019_L18.glb.blob.js" language="javascript" async="async"></script>
+
+    <!-- High quality models will take up a lot of RAM and might crash the browser. -->
+    <!--
+    <script src="gltf/Tile_173078_LD_011_018_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_018_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_017_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_011_019_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_018_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_017_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_010_019_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_017_L22.glb.blob.js" language="javascript" async="async"></script>
+    <script src="gltf/Tile_173078_LD_012_019_L22.glb.blob.js" language="javascript" async="async"></script>
+    -->
+
+</body>
+
+</html>
